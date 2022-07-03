@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 import type { MahjongCard } from '@type/mahjong'
 
-import { changeCard } from './board'
+import { changeCard, initGame } from './board'
 
 export const selectedSlice = createSlice({
   name: 'selected',
@@ -12,9 +12,11 @@ export const selectedSlice = createSlice({
     set: (_, action: PayloadAction<Array<MahjongCard>>) => action.payload,
   },
   extraReducers: (builder) => {
-    builder.addCase(changeCard, (state, action) =>
-      action.payload.isSolved ? [] : state
-    )
+    builder
+      .addCase(initGame, () => [])
+      .addCase(changeCard, (state, action) =>
+        action.payload.isSolved ? [] : state
+      )
   },
 })
 

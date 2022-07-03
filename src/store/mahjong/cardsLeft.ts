@@ -9,15 +9,15 @@ export const cardsLeftSlice = createSlice({
   initialState: 16,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(
-      initGame,
-      (_, action) =>
-        BOARD_SIZE_MAP[action.payload] * BOARD_SIZE_MAP[action.payload]
-    )
-
-    builder.addCase(changeCard, (state, action) =>
-      action.payload.isSolved ? state - 1 : state
-    )
+    builder
+      .addCase(
+        initGame,
+        (_, action) =>
+          BOARD_SIZE_MAP[action.payload] * BOARD_SIZE_MAP[action.payload]
+      )
+      .addCase(changeCard, (state, action) =>
+        action.payload.isSolved ? state - 1 : state
+      )
   },
 })
 

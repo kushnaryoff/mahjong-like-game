@@ -3,12 +3,7 @@
   height: 100%;
   padding: 16px;
   display: grid;
-
-  &--small {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 16px;
-  }
+  gap: 16px;
 }
 
 .game-card {

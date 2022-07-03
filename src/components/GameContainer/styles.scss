@@ -4,7 +4,7 @@
 
   &__title-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 20px 0;
     width: 100%;
@@ -12,6 +12,23 @@
 
   &__title {
     font-size: 36px;
+  }
+
+  &__start-game-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__board-size-select {
+    width: 100px;
+    margin-right: 24px;
+  }
+
+  &__start-game {
+    padding: 5px 14px;
+    color: #fff;
+    background-color: rgb(90, 3, 155);
+    cursor: pointer;
   }
 
   &__content {

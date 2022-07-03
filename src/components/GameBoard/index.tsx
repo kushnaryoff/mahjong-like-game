@@ -66,7 +66,13 @@ export const GameBoard = () => {
   }, [dispatch, preview])
 
   return (
-    <div className="game-board game-board--small">
+    <div
+      className="game-board"
+      style={{
+        gridTemplateColumns: `repeat(${mahjongBoard.length}, 1fr)`,
+        gridTemplateRows: `repeat(${mahjongBoard.length}, 1fr)`,
+      }}
+    >
       {mahjongBoard.flat().map((card, index) => (
         <Card
           key={index}
