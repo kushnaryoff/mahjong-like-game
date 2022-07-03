@@ -15,7 +15,7 @@ export const boardSlice = createSlice({
         position: { x, y },
       } = action.payload
 
-      const stateCopy = [...state]
+      const stateCopy = state.map((row) => [...row])
       stateCopy[y][x] = action.payload
       return stateCopy
     },

@@ -6,7 +6,7 @@ interface CreateBoardOptions {
   size: BoardSize
 }
 
-const BOARD_SIZE_MAP: Record<BoardSize, number> = {
+export const BOARD_SIZE_MAP: Record<BoardSize, number> = {
   small: 4,
   medium: 8,
   large: 12,
@@ -45,7 +45,6 @@ export const mapBoard = (board: Array<Array<number>>): MahjongBoard =>
     row.map<MahjongCard>((value, x) => ({
       value,
       position: { x, y },
-      isSelected: false,
       isSolved: false,
     }))
   )

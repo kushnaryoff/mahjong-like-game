@@ -1,11 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import { boardReducer, gameEndedReducer } from './mahjong'
+import {
+  boardReducer,
+  selectedReducer,
+  gameDisabledReducer,
+  cardsLeftReducer,
+  previewReducer,
+} from './mahjong'
 
 export const store = configureStore({
   reducer: {
     board: boardReducer,
-    gameEnded: gameEndedReducer,
+    selected: selectedReducer,
+    gameDisabled: gameDisabledReducer,
+    cardsLeft: cardsLeftReducer,
+    preview: previewReducer,
   },
 })
 

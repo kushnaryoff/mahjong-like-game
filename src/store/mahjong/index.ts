@@ -1,2 +1,5 @@
 export { default as boardReducer } from './board'
-export { default as gameEndedReducer } from './gameEnded'
+export { default as selectedReducer } from './selected'
+export { default as gameDisabledReducer } from './gameDisabled'
+export { default as cardsLeftReducer } from './cardsLeft'
+export { default as previewReducer } from './preview'

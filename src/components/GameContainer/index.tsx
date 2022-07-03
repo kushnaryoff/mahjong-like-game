@@ -4,12 +4,11 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@store'
 import GameBoard from '@components/GameBoard'
 import GameEnd from '@components/GameEnd'
-import { createBoard } from '@utils/mahjong'
 
 import './styles.scss'
 
 const GameContainer = () => {
-  const gameEnded = useSelector((state: RootState) => state.gameEnded)
+  const cardsLeft = useSelector((state: RootState) => state.cardsLeft)
 
   return (
     <div className="game-container">
@@ -17,7 +16,8 @@ const GameContainer = () => {
         <div className="game-container__title">Mahjong Game</div>
       </div>
       <div className="game-container__content">
-        {!gameEnded ? <GameBoard /> : <GameEnd />}
+        {cardsLeft === 0 ? <GameEnd /> : null}
+        <GameBoard />
       </div>
     </div>
   )
