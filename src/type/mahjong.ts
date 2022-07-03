@@ -1,5 +1,6 @@
+export type BoardSize = 'small' | 'medium' | 'large'
+
 export interface MahjongCard {
-  id: number
   value: number
   position: { x: number; y: number }
   isSelected: boolean

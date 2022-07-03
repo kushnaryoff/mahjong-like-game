@@ -1,14 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { MahjongBoard, MahjongCard } from 'type/mahjong'
 
-const initialState: MahjongBoard = null
+import type { BoardSize, MahjongBoard, MahjongCard } from '@type/mahjong'
+import { createBoard, mapBoard } from '@utils/mahjong'
+
+const initialState: MahjongBoard = mapBoard(createBoard({ size: 'small' }))
 
 export const boardSlice = createSlice({
   name: 'board',
   initialState,
   reducers: {
-    set: (_, action: PayloadAction<MahjongBoard>) => action.payload,
     changeCard: (state, action: PayloadAction<MahjongCard>) => {
       const {
         position: { x, y },
@@ -18,9 +19,11 @@ export const boardSlice = createSlice({
       stateCopy[y][x] = action.payload
       return stateCopy
     },
+    initGame: (_, action: PayloadAction<BoardSize>) =>
+      mapBoard(createBoard({ size: action.payload })),
   },
 })
 
-export const { changeCard } = boardSlice.actions
+export const { changeCard, initGame } = boardSlice.actions
 
 export default boardSlice.reducer

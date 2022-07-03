@@ -13,30 +13,12 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@components": ["./components"],
-      "@constants/*": ["./constants/*"],
-      "@constants": ["./constants"],
-      "@screens/*": ["./screens/*"],
-      "@screens": ["./screens"],
-      "@layouts/*": ["./layouts/*"],
-      "@layouts": ["./layouts"],
-      "@interfaces/*": ["./interfaces/*"],
-      "@interfaces": ["./interfaces"],
+      "@type/*": ["./type/*"],
+      "@type": ["./type"],
       "@utils/*": ["./utils/*"],
       "@utils": ["./utils"],
       "@store/*": ["./store/*"],
-      "@store": ["./store"],
-      "@reducers/*": ["./reducers/*"],
-      "@reducers": ["./reducers"],
-      "@selectors/*": ["./selectors/*"],
-      "@selectors": ["./selectors"],
-      "@actions/*": ["./actions/*"],
-      "@actions": ["./actions"],
-      "@sagas/*": ["./sagas/*"],
-      "@sagas": ["./sagas"],
-      "@styles/*": ["./styles/*"],
-      "@styles": ["./styles"],
-      "@hooks/*": ["./hooks/*"],
-      "@hooks": ["./hooks"]
+      "@store": ["./store"]
     }
   },
   "include": ["./src/**/*"]

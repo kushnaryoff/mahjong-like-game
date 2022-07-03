@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@store'
 import GameBoard from '@components/GameBoard'
 import GameEnd from '@components/GameEnd'
+import { createBoard } from '@utils/mahjong'
 
 import './styles.scss'
 
