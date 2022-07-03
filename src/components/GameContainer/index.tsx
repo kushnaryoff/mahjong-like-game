@@ -1,5 +1,6 @@
 import React, { memo, useMemo, useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import clsx from 'clsx'
 
 import { RootState } from '@store'
 import GameBoard from '@components/GameBoard'
@@ -13,6 +14,8 @@ const GameContainer = () => {
   const dispatch = useDispatch()
 
   const cardsLeft = useSelector((state: RootState) => state.cardsLeft)
+
+  const preview = useSelector((state: RootState) => state.preview)
 
   const [boardSize, setBoardSize] = useState<BoardSize>('small')
 
@@ -32,8 +35,12 @@ const GameContainer = () => {
   )
 
   const handleStartGame = useCallback(() => {
+    if (preview) {
+      return
+    }
+
     dispatch(initGame(boardSize))
-  }, [boardSize, dispatch])
+  }, [preview, boardSize, dispatch])
 
   return (
     <div className="game-container">
@@ -51,7 +58,13 @@ const GameContainer = () => {
               </option>
             ))}
           </select>
-          <div className="game-container__start-game" onClick={handleStartGame}>
+          <div
+            className={clsx(
+              'game-container__start-game',
+              preview && 'game-container__start-game--disabled'
+            )}
+            onClick={handleStartGame}
+          >
             Start new game
           </div>
         </div>
